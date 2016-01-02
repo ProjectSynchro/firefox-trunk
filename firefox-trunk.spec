@@ -2,9 +2,9 @@ AutoReqProv: no
 
 ##Init variables
 
-%global currenf 46.0a1
+%global currenf 44.0a1
 %global _optdir /opt
-%global packver 0.2
+%global packver 0.1
 %ifarch x86_64
 %global arch x86_64
 %else
@@ -14,8 +14,8 @@ AutoReqProv: no
 ##Package Version and Licences
 
 Summary: Firefox Nightly RPM Builds
-Name: firefox-trunk
-Version: 46
+Name: firefox-44
+Version: 44
 Release: 0a1_%{packver}%{?dist}
 License: MPLv1.1 or GPLv2+ or LGPLv2+
 Group: Applications/Internet
@@ -40,7 +40,7 @@ This package is a package built directly from Mozilla's nightly tarball. This pa
 ##Build Instructions
 
 %build
-wget -c --no-check-certificate -P %{_builddir} https://archive.mozilla.org/pub/firefox/nightly/latest-mozilla-central/firefox-%{currenf}.en-US.linux-%{arch}.tar.bz2
+wget -c --no-check-certificate -P %{_builddir} https://ftp.mozilla.org/pub/firefox/nightly/2015/10/2015-10-29-03-02-58-mozilla-central/firefox-%{currenf}.en-US.linux-%{arch}.tar.bz2
 tar -jxvf firefox-%{currenf}.en-US.linux-*.tar.bz2  -C %{_builddir}
 
 ## Install Instructions
@@ -48,24 +48,24 @@ tar -jxvf firefox-%{currenf}.en-US.linux-*.tar.bz2  -C %{_builddir}
 %install
 
 install -dm 755 %{buildroot}/usr/{bin,share/{applications,icons/hicolor/128x128/apps},opt}
-install -dm 755 %{buildroot}/%{_optdir}/firefox-trunk/browser/defaults/preferences/
+install -dm 755 %{buildroot}/%{_optdir}/firefox-44/browser/defaults/preferences/
 
-install -m644 %{_builddir}/firefox/browser/icons/mozicon128.png %{buildroot}/usr/share/icons/hicolor/128x128/apps/firefox-trunk.png
+install -m644 %{_builddir}/firefox/browser/icons/mozicon128.png %{buildroot}/usr/share/icons/hicolor/128x128/apps/firefox-44.png
 
-cp -rf %{_builddir}/firefox/* %{buildroot}/opt/firefox-trunk/
-ln -s /opt/firefox-trunk/firefox %{buildroot}/usr/bin/firefox-trunk
+cp -rf %{_builddir}/firefox/* %{buildroot}/opt/firefox-44/
+ln -s /opt/firefox-44/firefox %{buildroot}/usr/bin/firefox-44
 
 cat > %{buildroot}/%{_datadir}/applications/%{name}.desktop << EOF
 
 ## Desktop File
 
 [Desktop Entry]
-Version=46.0a1
+Version=44.0a1
 Name=Nightly
-GenericName=Firefox Nightly
+GenericName=Firefox Nightly 44
 Comment=Browse the Web
-Exec=firefox-trunk %u
-Icon=firefox-trunk.png
+Exec=firefox-44 %u
+Icon=firefox-44.png
 Terminal=false
 Type=Application
 MimeType=text/html;text/xml;application/xhtml+xml;application/vnd.mozilla.xul+xml;text/mml;x-scheme-handler/http;x-scheme-handler/https;
@@ -74,7 +74,7 @@ Keywords=web;browser;internet;
 EOF
 ## Disable Update Alert
 echo '// Disable Update Alert
-pref("app.update.enabled", false);' > %{buildroot}/opt/firefox-trunk/browser/defaults/preferences/vendor.js
+pref("app.update.enabled", false);' > %{buildroot}/opt/firefox-44/browser/defaults/preferences/vendor.js
 
 ##Cleanup
 
@@ -86,5 +86,5 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %{_bindir}/%{name}
 %{_datadir}/applications/%{name}*.desktop
-%{_datadir}/icons//hicolor/128x128/apps/%{name}.png
-%{_optdir}/firefox-trunk/
+%{_datadir}/icons/hicolor/128x128/apps/%{name}.png
+%{_optdir}/firefox-44/
