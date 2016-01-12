@@ -4,7 +4,7 @@ AutoReqProv: no
 
 %global currenf 46.0a1
 %global _optdir /opt
-%global packver 0.2
+%global packver 0.3
 %ifarch x86_64
 %global arch x86_64
 %else
@@ -29,12 +29,12 @@ Requires: alsa-lib libX11 libXcomposite libXdamage libnotify libXt libXext glib2
 Requires: nspr >= 4.10.8
 Requires: nss >= 3.19.2
 Requires: sqlite >= 3.8.10.2
-Conflicts: firefox-trunk = 46
+
 
 ##Description for Package
 
 %description
-This package is a package built directly from Mozilla's nightly tarball. This package will be updated weekly if not sooner.
+This package is a package built directly from Mozilla's nightly tarball, until a newer version of firefox is released. This package will be updated weekly if not sooner.
 
 %prep
 
