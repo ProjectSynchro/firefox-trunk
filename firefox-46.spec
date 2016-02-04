@@ -4,7 +4,7 @@ AutoReqProv: no
 
 %global currenf 46.0a1
 %global _optdir /opt
-%global packver 0.6
+%global packver 0.7
 %ifarch x86_64
 %global arch x86_64
 %else
@@ -41,7 +41,7 @@ This package is a package built directly from Mozilla's nightly tarball, until a
 ##Build Instructions
 
 %build
-wget -c --no-check-certificate -P %{_builddir} https://ftp.mozilla.org/pub/firefox/nightly/latest-mozilla-central/firefox-%{currenf}.en-US.linux-%{arch}.tar.bz2
+wget -c --no-check-certificate -P %{_builddir} https://ftp.mozilla.org/pub/firefox/nightly/2016/01/2016-01-25-03-02-03-mozilla-central/firefox-%{currenf}.en-US.linux-%{arch}.tar.bz2
 tar -jxvf firefox-%{currenf}.en-US.linux-*.tar.bz2  -C %{_builddir}
 
 ## Install Instructions
