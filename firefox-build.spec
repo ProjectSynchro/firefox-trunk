@@ -2,8 +2,8 @@ AutoReqProv: no
 
 ##Init variables
 
-%global currenf 48.0a1
-%global packver 48
+%global currenf 47.0a1
+%global packver 47
 %global _optdir /opt
 %ifarch x86_64
 %global arch x86_64
@@ -14,7 +14,7 @@ AutoReqProv: no
 ##Package Version and Licences
 
 Summary: Firefox Nightly RPM Builds
-Name: firefox-trunk
+Name: firefox-47
 Version: %{packver}
 Release: 0a1_%(date +%%y%%m%%d)%{?dist}
 License: MPLv1.1 or GPLv2+ or LGPLv2+
@@ -40,7 +40,7 @@ This package is a package built directly from Mozilla's nightly tarball. This pa
 ##Build Instructions
 
 %build
-wget -c --no-check-certificate -P %{_builddir} https://archive.mozilla.org/pub/firefox/nightly/latest-mozilla-central/firefox-%{currenf}.en-US.linux-%{arch}.tar.bz2
+wget -c --no-check-certificate -P %{_builddir} https://archive.mozilla.org/pub/firefox/nightly/2016/03/2016-03-07-03-02-08-mozilla-central/firefox-%{currenf}.en-US.linux-%{arch}.tar.bz2
 tar -jxvf firefox-%{currenf}.en-US.linux-*.tar.bz2  -C %{_builddir}
 
 ## Install Instructions
