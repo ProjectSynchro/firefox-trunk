@@ -4,7 +4,7 @@ AutoReqProv: no
 
 %global currenf 45.0a1
 %global _optdir /opt
-%global packver 0.1
+%global packver 45
 %ifarch x86_64
 %global arch x86_64
 %else
@@ -13,10 +13,10 @@ AutoReqProv: no
 
 ##Package Version and Licences
 
-Summary: Firefox Nightly RPM Builds
+Summary: Legacy Firefox Nightly Build
 Name: firefox-45
 Version: 45
-Release: 0a1_%{packver}%{?dist}
+Release: 0a1_%(date +%%y%%m%%d)%{?dist}
 License: MPLv1.1 or GPLv2+ or LGPLv2+
 Group: Applications/Internet
 URL: http://www.nightly.mozilla.org/
@@ -33,7 +33,7 @@ Requires: sqlite >= 3.8.10.2
 ##Description for Package
 
 %description
-This package is a package built directly from Mozilla's nightly tarball. This package will be updated weekly if not sooner.
+This package is a legacy package built from Mozilla's Final Firefox Nightly 45 Build. This package this package will only be updated if neccesary.
 
 %prep
 
