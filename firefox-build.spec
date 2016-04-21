@@ -4,7 +4,7 @@ AutoReqProv: no
 
 %global currenf 44.0a1
 %global _optdir /opt
-%global packver 0.1
+%global packver 44
 %ifarch x86_64
 %global arch x86_64
 %else
@@ -13,10 +13,10 @@ AutoReqProv: no
 
 ##Package Version and Licences
 
-Summary: Firefox Nightly RPM Builds
+Summary: Legacy Firefox Nightly Build
 Name: firefox-44
-Version: 44
-Release: 0a1_%{packver}%{?dist}
+Version: %{packver}
+Release: 0a1_%(date + %%y%%m%%d)%{?dist}
 License: MPLv1.1 or GPLv2+ or LGPLv2+
 Group: Applications/Internet
 URL: http://www.nightly.mozilla.org/
@@ -33,7 +33,7 @@ Requires: sqlite >= 3.8.10.2
 ##Description for Package
 
 %description
-This package is a package built directly from Mozilla's nightly tarball. This package will be updated weekly if not sooner.
+This package is a legacy package built from Mozilla's final Firefox 44 Nightly. This package will be updated onlt if neccesary.
 
 %prep
 
@@ -62,7 +62,7 @@ cat > %{buildroot}/%{_datadir}/applications/%{name}.desktop << EOF
 [Desktop Entry]
 Version=44.0a1
 Name=Nightly
-GenericName=Firefox Nightly 44
+GenericName= Legacy Nightly 44
 Comment=Browse the Web
 Exec=firefox-44 %u
 Icon=firefox-44.png
