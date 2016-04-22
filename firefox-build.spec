@@ -4,7 +4,7 @@ AutoReqProv: no
 
 %global currenf 47.0a1
 %global _optdir /opt
-%global packver 0.1
+%global packver 47
 %ifarch x86_64
 %global arch x86_64
 %else
@@ -13,10 +13,10 @@ AutoReqProv: no
 
 ##Package Version and Licences
 
-Summary: Firefox Nightly RPM Builds
+Summary: Firefox Nightly 47 RPM Build
 Name: firefox-47
 Version: 47
-Release: 0a1_%{packver}%{?dist}
+Release: 0a1_%(date + %%y%%m%%d)%{?dist}
 License: MPLv1.1 or GPLv2+ or LGPLv2+
 Group: Applications/Internet
 URL: http://www.nightly.mozilla.org/
@@ -34,7 +34,7 @@ Requires: sqlite >= 3.8.10.2
 ##Description for Package
 
 %description
-This package is a package built directly from Mozilla's nightly tarball, until a newer version of firefox is released. This package will be updated weekly if not sooner.
+This package is a legacy package built from Mozilla's Final Nightly of Firefox 47. This package will only be updated if neccesary.
 
 %prep
 
