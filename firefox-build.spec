@@ -4,7 +4,7 @@ AutoReqProv: no
 
 %global currenf 46.0a1
 %global _optdir /opt
-%global packver 0.7
+%global packver 46
 %ifarch x86_64
 %global arch x86_64
 %else
@@ -16,7 +16,7 @@ AutoReqProv: no
 Summary: Firefox Nightly RPM Builds
 Name: firefox-46
 Version: 46
-Release: 0a1_%{packver}%{?dist}
+Release: 0a1_%(date + %%y%%m%%d)%{?dist}
 License: MPLv1.1 or GPLv2+ or LGPLv2+
 Group: Applications/Internet
 URL: http://www.nightly.mozilla.org/
@@ -34,7 +34,7 @@ Requires: sqlite >= 3.8.10.2
 ##Description for Package
 
 %description
-This package is a package built directly from Mozilla's nightly tarball, until a newer version of firefox is released. This package will be updated weekly if not sooner.
+This package is a legacy package built from Mozilla's Final Nightly Build of Firefox 46. This package will be updated only when neccesary.
 
 %prep
 
