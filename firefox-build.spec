@@ -2,9 +2,9 @@ AutoReqProv: no
 
 ##Init variables
 
-%global currenf 47.0a1
+%global currenf 48.0a1
 %global _optdir /opt
-%global packver 47
+%global packver 48
 %ifarch x86_64
 %global arch x86_64
 %else
@@ -13,9 +13,9 @@ AutoReqProv: no
 
 ##Package Version and Licences
 
-Summary: Firefox Nightly 47 RPM Build
-Name: firefox-47
-Version: 47
+Summary: Firefox Nightly 48 RPM Build
+Name: firefox-48
+Version: 48
 Release: 0a1_%(date + %%y%%m%%d)%{?dist}
 License: MPLv1.1 or GPLv2+ or LGPLv2+
 Group: Applications/Internet
@@ -34,7 +34,7 @@ Requires: sqlite >= 3.8.10.2
 ##Description for Package
 
 %description
-This package is a legacy package built from Mozilla's Final Nightly of Firefox 47. This package will only be updated if neccesary.
+This package is a legacy package built from Mozilla's Final Nightly of Firefox 48. This package will only be updated if neccesary.
 
 %prep
 
@@ -61,12 +61,12 @@ cat > %{buildroot}/%{_datadir}/applications/%{name}.desktop << EOF
 ## Desktop File
 
 [Desktop Entry]
-Version=47.0a1
+Version=48.0a1
 Name=Nightly
-GenericName=Firefox Nightly 47
+GenericName=Firefox Nightly 48
 Comment=Browse the Web
-Exec=firefox-47 %u
-Icon=firefox-47.png
+Exec=firefox-48 %u
+Icon=firefox-48.png
 Terminal=false
 Type=Application
 MimeType=text/html;text/xml;application/xhtml+xml;application/vnd.mozilla.xul+xml;text/mml;x-scheme-handler/http;x-scheme-handler/https;
@@ -88,4 +88,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_bindir}/%{name}
 %{_datadir}/applications/%{name}*.desktop
 %{_datadir}/icons/hicolor/128x128/apps/%{name}.png
-%{_optdir}/firefox-47/
+%{_optdir}/firefox-48/
