@@ -16,7 +16,7 @@ AutoReqProv: no
 Summary: Legacy Firefox Nightly Build
 Name: firefox-44
 Version: %{packver}
-Release: 0a1_%(date + %%y%%m%%d)%{?dist}
+Release: 0a1_%(date +%%y%%m%%d)%{?dist}
 License: MPLv1.1 or GPLv2+ or LGPLv2+
 Group: Applications/Internet
 URL: http://www.nightly.mozilla.org/
