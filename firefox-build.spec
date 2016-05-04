@@ -49,12 +49,12 @@ tar -jxvf firefox-%{currenf}.en-US.linux-*.tar.bz2  -C %{_builddir}
 %install
 
 install -dm 755 %{buildroot}/usr/{bin,share/{applications,icons/hicolor/128x128/apps},opt}
-install -dm 755 %{buildroot}/%{_optdir}/firefox-47/browser/defaults/preferences/
+install -dm 755 %{buildroot}/%{_optdir}/firefox-48/browser/defaults/preferences/
 
-install -m644 %{_builddir}/firefox/browser/icons/mozicon128.png %{buildroot}/usr/share/icons/hicolor/128x128/apps/firefox-47.png
+install -m644 %{_builddir}/firefox/browser/icons/mozicon128.png %{buildroot}/usr/share/icons/hicolor/128x128/apps/firefox-48.png
 
-cp -rf %{_builddir}/firefox/* %{buildroot}/opt/firefox-47/
-ln -s /opt/firefox-47/firefox %{buildroot}/usr/bin/firefox-47
+cp -rf %{_builddir}/firefox/* %{buildroot}/opt/firefox-48/
+ln -s /opt/firefox-48/firefox %{buildroot}/usr/bin/firefox-48
 
 cat > %{buildroot}/%{_datadir}/applications/%{name}.desktop << EOF
 
@@ -75,7 +75,7 @@ Keywords=web;browser;internet;
 EOF
 ## Disable Update Alert
 echo '// Disable Update Alert
-pref("app.update.enabled", false);' > %{buildroot}/opt/firefox-47/browser/defaults/preferences/vendor.js
+pref("app.update.enabled", false);' > %{buildroot}/opt/firefox-48/browser/defaults/preferences/vendor.js
 
 ##Cleanup
 
