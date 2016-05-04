@@ -16,7 +16,7 @@ AutoReqProv: no
 Summary: Firefox Nightly 48 RPM Build
 Name: firefox-48
 Version: 48
-Release: 0a1_%(date + %%y%%m%%d)%{?dist}
+Release: 0a1_%(date +%%y%%m%%d)%{?dist}
 License: MPLv1.1 or GPLv2+ or LGPLv2+
 Group: Applications/Internet
 URL: http://www.nightly.mozilla.org/
