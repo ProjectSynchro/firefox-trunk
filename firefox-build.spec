@@ -41,7 +41,7 @@ This package is a legacy package built from Mozilla's Final Nightly of Firefox 4
 ##Build Instructions
 
 %build
-wget -c --no-check-certificate -P %{_builddir} https://archive.mozilla.org/pub/firefox/nightly/2016/03/2016-03-07-03-02-08-mozilla-central/firefox-%{currenf}.en-US.linux-%{arch}.tar.bz2
+wget -c --no-check-certificate -P %{_builddir} https://ftp.mozilla.org/pub/firefox/nightly/2016/04/2016-04-25-03-05-48-mozilla-central/firefox-%{currenf}.en-US.linux-%{arch}.tar.bz2
 tar -jxvf firefox-%{currenf}.en-US.linux-*.tar.bz2  -C %{_builddir}
 
 ## Install Instructions
