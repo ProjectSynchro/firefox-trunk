@@ -41,7 +41,7 @@ This package is a legacy package built from Mozilla's Final Nightly of Firefox 5
 ##Build Instructions
 
 %build
-wget -c --no-check-certificate -P %{_builddir} https://archive.mozilla.org/pub/firefox/nightly/2016/08/2016-08-02-03-04-37-mozilla-central/firefox-%{currenf}.en-US.linux-%{arch}.tar.bz2
+wget -c --no-check-certificate -P %{_builddir} https://archive.mozilla.org/pub/firefox/nightly/2016/08/2016-08-01-03-02-27-mozilla-central/firefox-%{currenf}.en-US.linux-%{arch}.tar.bz2
 tar -jxvf firefox-%{currenf}.en-US.linux-*.tar.bz2  -C %{_builddir}
 
 ## Install Instructions
